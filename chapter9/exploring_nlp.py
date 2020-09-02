@@ -16,7 +16,7 @@ print(len(names.words()))
 from nltk.tokenize import word_tokenize
 sent = '''I am reading a book.
           It is Python Machine Learning By Example,
-          2nd edition.'''
+          3nd edition.'''
 
 print(word_tokenize(sent))
 
