@@ -35,5 +35,5 @@ for k in K:
     # Estimate accuracy on the data set with k selected features
     classifier = SVC(gamma=0.005)
     score_k_features = cross_val_score(classifier, X_k_selected, y).mean()
-    print(f'Score with the data set of top {k} features: {score_k_features:.2f}')
+    print(f'Score with the dataset of top {k} features: {score_k_features:.2f}')
 
