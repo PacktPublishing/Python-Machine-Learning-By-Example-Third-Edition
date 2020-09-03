@@ -23,4 +23,4 @@ for n in N:
     # Estimate accuracy on the data set with top n components
     classifier = SVC(gamma=0.005)
     score_n_components = cross_val_score(classifier, X_n_kept, y).mean()
-    print(f'Score with the data set of top {n} components: {score_n_components:.2f}')
+    print(f'Score with the dataset of top {n} components: {score_n_components:.2f}')
