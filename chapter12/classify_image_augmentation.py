@@ -70,8 +70,7 @@ generate_plot_pics(datagen, train_images[0], 'width_shift')
 
 datagen = ImageDataGenerator(width_shift_range=8,
                              height_shift_range=8)
-generate_plot_pics(datagen, train_images, 'width_height_shift')
-
+generate_plot_pics(datagen, train_images[0], 'width_height_shift')
 
 
 
@@ -120,9 +119,9 @@ model_aug.compile(optimizer='adam',
               loss=losses.sparse_categorical_crossentropy,
               metrics=['accuracy'])
 
-model_aug.fit_generator(datagen.flow(X_train, train_labels, batch_size=40),
-                    steps_per_epoch=len(X_train) / 10,
-                    validation_data=(X_test, test_labels), epochs=20)
+train_generator = datagen.flow(X_train, train_labels, seed=42, batch_size=40)
+model_aug.fit(train_generator, epochs=50, validation_data=(X_test, test_labels))
+
 test_loss, test_acc = model_aug.evaluate(X_test, test_labels, verbose=2)
 print('Accuracy on test set:', test_acc)
 
