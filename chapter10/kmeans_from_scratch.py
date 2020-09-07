@@ -13,14 +13,8 @@ y = iris.target
 
 import numpy as np
 from matplotlib import pyplot as plt
-y_0 = np.where(y==0)
-plt.scatter(X[y_0, 0], X[y_0, 1])
-y_1 = np.where(y==1)
-plt.scatter(X[y_1, 0], X[y_1, 1])
-y_2 = np.where(y==2)
-plt.scatter(X[y_2, 0], X[y_2, 1])
+plt.scatter(X[:,0], X[:,1], c=y)
 plt.show()
-
 
 k = 3
 random_index = np.random.choice(range(len(X)), k)
