@@ -65,10 +65,7 @@ while iter < max_iter and centroids_diff > tol:
     print('Centroids move: {:5.4f}'.format(centroids_diff))
     visualize_centroids(X, centroids)
 
-
-for i in range(k):
-    cluster_i = np.where(clusters == i)
-    plt.scatter(X[cluster_i, 0], X[cluster_i, 1])
+plt.scatter(X[:, 0], X[:, 1], c=clusters)
 plt.scatter(centroids[:, 0], centroids[:, 1], marker='*', s=200, c='#050505')
 plt.show()
 
