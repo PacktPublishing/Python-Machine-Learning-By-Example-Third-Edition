@@ -74,12 +74,12 @@ end_train = '2018-12-31'
 start_test = '2019-01-01'
 end_test = '2019-12-31'
 
-data_train = data.ix[start_train:end_train]
+data_train = data.loc[start_train:end_train]
 X_train = data_train.drop('close', axis=1).values
 y_train = data_train['close'].values
 
 
-data_test = data.ix[start_test:end_test]
+data_test = data.loc[start_test:end_test]
 X_test = data_test.drop('close', axis=1).values
 y_test = data_test['close'].values
 
