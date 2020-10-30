@@ -7,8 +7,8 @@ Author: Yuxi (Hayden) Liu (yuxi.liu.ece@gmail.com)
 import pandas as pd
 df = pd.read_excel('CTG.xls', "Raw Data")
 
-X = df.ix[1:2126, 3:-2].values
-Y = df.ix[1:2126, -1].values
+X = df.iloc[1:2126, 3:-2].values
+Y = df.iloc[1:2126, -1].values
 
 from collections import Counter
 print(Counter(Y))
